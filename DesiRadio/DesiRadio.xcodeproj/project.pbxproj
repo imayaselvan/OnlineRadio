@@ -21,6 +21,7 @@
 		C5286E8E1961A49800FFEA6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5286E701961A49700FFEA6A /* UIKit.framework */; };
 		C5286E961961A49800FFEA6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5286E941961A49800FFEA6A /* InfoPlist.strings */; };
 		C5286E981961A49800FFEA6A /* DesiRadioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5286E971961A49800FFEA6A /* DesiRadioTests.m */; };
+		D945B1F51B36001D003A865C /* iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png in Resources */ = {isa = PBXBuildFile; fileRef = D945B1F41B36001D003A865C /* iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png */; };
 		D9E525B51B34ACC8006A339D /* Radio.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E525B41B34ACC8006A339D /* Radio.plist */; };
 		D9E525BB1B35D689006A339D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E525BA1B35D689006A339D /* AVKit.framework */; };
 		D9E525BD1B35D68F006A339D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E525BC1B35D68F006A339D /* AVFoundation.framework */; };
@@ -59,6 +60,7 @@
 		C5286E931961A49800FFEA6A /* DesiRadioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesiRadioTests-Info.plist"; sourceTree = "<group>"; };
 		C5286E951961A49800FFEA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5286E971961A49800FFEA6A /* DesiRadioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesiRadioTests.m; sourceTree = "<group>"; };
+		D945B1F41B36001D003A865C /* iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png"; sourceTree = "<group>"; };
 		D9E525B41B34ACC8006A339D /* Radio.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Radio.plist; path = ../Radio.plist; sourceTree = "<group>"; };
 		D9E525BA1B35D689006A339D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		D9E525BC1B35D68F006A339D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +101,7 @@
 		C5286E601961A49700FFEA6A = {
 			isa = PBXGroup;
 			children = (
+				D945B1F41B36001D003A865C /* iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png */,
 				C5286E721961A49700FFEA6A /* DesiRadio */,
 				C5286E911961A49800FFEA6A /* DesiRadioTests */,
 				C5286E6B1961A49700FFEA6A /* Frameworks */,
@@ -277,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D945B1F51B36001D003A865C /* iOS Simulator Screen Shot 21-Jun-2015 1.01.04 am.png in Resources */,
 				D9E525B51B34ACC8006A339D /* Radio.plist in Resources */,
 				C5286E851961A49700FFEA6A /* Images.xcassets in Resources */,
 				C5286E771961A49700FFEA6A /* InfoPlist.strings in Resources */,
