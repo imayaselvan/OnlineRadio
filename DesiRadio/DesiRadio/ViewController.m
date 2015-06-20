@@ -114,6 +114,8 @@
 {
     if (self.player.currentItem && self.player.rate != 0)
     {
+        [_PlayBtn setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
+
         return YES;
     }
     return NO;
