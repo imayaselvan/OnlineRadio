@@ -7,30 +7,102 @@
 //
 
 #import "ViewController.h"
+#import "PCSEQVisualizer.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController ()
+@property(nonatomic)AVPlayer *player;
+@property(nonatomic)AVPlayerItem *playerItem;
+@property(nonatomic)PCSEQVisualizer * visual;
 
 @end
 
 @implementation ViewController
-@synthesize URL;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     
-    stationnames =[[NSArray alloc]initWithObjects:@"Thendral World Radio",@"Express Tamil Radio",@"HINDI FM",@"Vulaa Live Radio from USA",@"International Tamil Radio",@"Oli FM",@"First Tamil Radio from UK",@"Love Tamil Radio",@"TI FM Radio",@"Ungal tamil radio",@"Tamil flash fm",@"vegam tamil radio",@"Tamil Radio 24/7",@"vanavil fm",@"ROCK VAnavil",@"tamil aruvy", nil];
-    StationURL =[[NSArray alloc]initWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
-
+    [self loadData];
+    [self setUpvisual];
     
-    PlayerView=[[UIWebView alloc]init];
-    [self.view addSubview:PlayerView];
-    PlayerView.hidden=TRUE;
-
+    
 }
+-(void)loadData{
+    NSString *path         =[[NSBundle mainBundle] pathForResource:@"Radio" ofType:@"plist"];
+    self.stationDatas      =[NSDictionary dictionaryWithContentsOfFile:path];
+    stationnames =[self.stationDatas allKeys];
+    
+}
+-(void)setUpPlayerwithUrl:(NSURL *)url {
+    
+    if (self.playerItem) {
+        self.playerItem = [AVPlayerItem playerItemWithURL:url];
+        [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
+        
+    }else{
+        self.playerItem = [AVPlayerItem playerItemWithURL:url];
+        self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
+        [self.player addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    
+
+    [self.player play];
+    
+    if ([self isPlaying]) {
+        [self.visual start];
+    }
+}
+-(void)setUpvisual {
+    
+    self.visual = [[PCSEQVisualizer alloc]initWithNumberOfBars:20];
+    CGRect frame = self.visual.frame;
+    frame.origin.x = (self.view.frame.size.width - self.visual.frame.size.width)/2;
+    frame.origin.y = (VisualContainerView.frame.size.height - self.visual.frame.size.height)/2;
+    self.visual.center =VisualContainerView.center;
+    self.visual.frame = frame;
+    [VisualContainerView addSubview:self.visual];
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    
+    if (object == self.player && [keyPath isEqualToString:@"status"]) {
+        if (self.player.status == AVPlayerStatusFailed) {
+            NSLog(@"AVPlayer Failed");
+            [self.visual stop];
+            
+            
+        } else if (self.player.status == AVPlayerStatusReadyToPlay) {
+            NSLog(@"AVPlayerStatusReadyToPlay");
+            
+            if ([self  isPlaying]) {
+                [self.visual start];
+
+            }
+
+            
+        } else if (self.player.status == AVPlayerItemStatusUnknown) {
+            NSLog(@"AVPlayer Unknown");
+            [self.visual stop];
+            
+            
+        }
+    }
+}
+-(BOOL)isPlaying
+{
+    if (self.player.currentItem && self.player.rate != 0)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [stationnames count];
+    return [self.stationDatas count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -43,32 +115,33 @@
         
     }
     
+    
     cell.textLabel.text=[stationnames objectAtIndex:indexPath.row];
     [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     cell.backgroundColor=[UIColor clearColor];
     return cell;
-    
-    
 }
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self isPlaying]) {
+        [self.player pause];
+        [self.visual stop];
 
-  
-    self.URL  = [NSURL URLWithString:@"http://extamil.com/extamil.m3u"];
-    [self Loadurl:self.URL];
+    }
+    [self setUpPlayerwithUrl:[NSURL URLWithString:[self.stationDatas objectForKey:[stationnames objectAtIndex:indexPath.row]]]];
 }
-
--(void)Loadurl:(NSURL*)url{
-    PlayerView.hidden=FALSE;
-    PlayerView.backgroundColor=[UIColor redColor];
-    request = [[NSURLRequest alloc] initWithURL:url];
-    [PlayerView loadRequest:request];
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)dealloc{
+    
+    [self.player removeObserver:self forKeyPath:@"status" context:nil];
 
+}
 @end

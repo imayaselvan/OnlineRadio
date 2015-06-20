@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Mukil FM</key>
+	<string>http://128.199.124.172:80</string>
+	<key>Lankasri FM</key>
+	<string>http://159.253.131.114:80</string>
+	<key>Puradsi Isaiyaruvi </key>
+	<string>http://46.28.53.118:9994/stream</string>
+	<key>IBC Tamil</key>
+	<string>http://38.96.148.226:6176</string>
+	<key> Hindi Desi Bollywood Evergreen Hits</key>
+	<string>http://50.7.77.114:8296</string>
+	<key>Radio City Hindi</key>
+	<string>http://216.245.201.73:9960</string>
+</dict>
+</plist>

@@ -21,6 +21,12 @@
 		C5286E8E1961A49800FFEA6A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5286E701961A49700FFEA6A /* UIKit.framework */; };
 		C5286E961961A49800FFEA6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5286E941961A49800FFEA6A /* InfoPlist.strings */; };
 		C5286E981961A49800FFEA6A /* DesiRadioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5286E971961A49800FFEA6A /* DesiRadioTests.m */; };
+		D9E525B51B34ACC8006A339D /* Radio.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E525B41B34ACC8006A339D /* Radio.plist */; };
+		D9E525BB1B35D689006A339D /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E525BA1B35D689006A339D /* AVKit.framework */; };
+		D9E525BD1B35D68F006A339D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E525BC1B35D68F006A339D /* AVFoundation.framework */; };
+		D9E525C61B35DD11006A339D /* PCSEQVisualizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E525C11B35DD11006A339D /* PCSEQVisualizer.m */; };
+		D9E525C71B35DD11006A339D /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E525C31B35DD11006A339D /* UIImage+Color.m */; };
+		D9E525C81B35DD11006A339D /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E525C51B35DD11006A339D /* Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,15 @@
 		C5286E931961A49800FFEA6A /* DesiRadioTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DesiRadioTests-Info.plist"; sourceTree = "<group>"; };
 		C5286E951961A49800FFEA6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5286E971961A49800FFEA6A /* DesiRadioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesiRadioTests.m; sourceTree = "<group>"; };
+		D9E525B41B34ACC8006A339D /* Radio.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Radio.plist; path = ../Radio.plist; sourceTree = "<group>"; };
+		D9E525BA1B35D689006A339D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		D9E525BC1B35D68F006A339D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D9E525C01B35DD11006A339D /* PCSEQVisualizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCSEQVisualizer.h; sourceTree = "<group>"; };
+		D9E525C11B35DD11006A339D /* PCSEQVisualizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCSEQVisualizer.m; sourceTree = "<group>"; };
+		D9E525C21B35DD11006A339D /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		D9E525C31B35DD11006A339D /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		D9E525C41B35DD11006A339D /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		D9E525C51B35DD11006A339D /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E525BD1B35D68F006A339D /* AVFoundation.framework in Frameworks */,
+				D9E525BB1B35D689006A339D /* AVKit.framework in Frameworks */,
 				C5286E6F1961A49700FFEA6A /* CoreGraphics.framework in Frameworks */,
 				C5286E711961A49700FFEA6A /* UIKit.framework in Frameworks */,
 				C5286E6D1961A49700FFEA6A /* Foundation.framework in Frameworks */,
@@ -101,6 +118,8 @@
 		C5286E6B1961A49700FFEA6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9E525BC1B35D68F006A339D /* AVFoundation.framework */,
+				D9E525BA1B35D689006A339D /* AVKit.framework */,
 				C5286E6C1961A49700FFEA6A /* Foundation.framework */,
 				C5286E6E1961A49700FFEA6A /* CoreGraphics.framework */,
 				C5286E701961A49700FFEA6A /* UIKit.framework */,
@@ -112,6 +131,8 @@
 		C5286E721961A49700FFEA6A /* DesiRadio */ = {
 			isa = PBXGroup;
 			children = (
+				D9E525BF1B35DCFD006A339D /* Visualizer */,
+				D9E525B91B35D66C006A339D /* Radio DataBase */,
 				C5286E7B1961A49700FFEA6A /* AppDelegate.h */,
 				C5286E7C1961A49700FFEA6A /* AppDelegate.m */,
 				C5286E7E1961A49700FFEA6A /* Main.storyboard */,
@@ -150,6 +171,27 @@
 				C5286E941961A49800FFEA6A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D9E525B91B35D66C006A339D /* Radio DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				D9E525B41B34ACC8006A339D /* Radio.plist */,
+			);
+			name = "Radio DataBase";
+			sourceTree = "<group>";
+		};
+		D9E525BF1B35DCFD006A339D /* Visualizer */ = {
+			isa = PBXGroup;
+			children = (
+				D9E525C01B35DD11006A339D /* PCSEQVisualizer.h */,
+				D9E525C11B35DD11006A339D /* PCSEQVisualizer.m */,
+				D9E525C21B35DD11006A339D /* UIImage+Color.h */,
+				D9E525C31B35DD11006A339D /* UIImage+Color.m */,
+				D9E525C41B35DD11006A339D /* Common.h */,
+				D9E525C51B35DD11006A339D /* Common.m */,
+			);
+			name = Visualizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +241,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					C5286E681961A49700FFEA6A = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					C5286E891961A49800FFEA6A = {
 						TestTargetID = C5286E681961A49700FFEA6A;
 					};
@@ -228,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E525B51B34ACC8006A339D /* Radio.plist in Resources */,
 				C5286E851961A49700FFEA6A /* Images.xcassets in Resources */,
 				C5286E771961A49700FFEA6A /* InfoPlist.strings in Resources */,
 				C5286E801961A49700FFEA6A /* Main.storyboard in Resources */,
@@ -251,7 +301,10 @@
 			files = (
 				C5286E831961A49700FFEA6A /* ViewController.m in Sources */,
 				C5286E7D1961A49700FFEA6A /* AppDelegate.m in Sources */,
+				D9E525C71B35DD11006A339D /* UIImage+Color.m in Sources */,
+				D9E525C61B35DD11006A339D /* PCSEQVisualizer.m in Sources */,
 				C5286E791961A49700FFEA6A /* main.m in Sources */,
+				D9E525C81B35DD11006A339D /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +509,7 @@
 				C5286E9D1961A49800FFEA6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5286E9E1961A49800FFEA6A /* Build configuration list for PBXNativeTarget "DesiRadioTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +518,7 @@
 				C5286EA01961A49800FFEA6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,9 +12,9 @@
 {
     IBOutlet UITableView *tab;
     NSArray *stationnames,*StationURL;
-    UIWebView *PlayerView;
-    NSURLRequest *request;
+    __weak IBOutlet UIView *VisualContainerView;
 
 }
-@property(nonatomic,retain)NSURL *URL;
+@property(nonatomic,retain)NSDictionary *stationDatas;
+
 @end
