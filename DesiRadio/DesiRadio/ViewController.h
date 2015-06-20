@@ -15,6 +15,7 @@
     __weak IBOutlet UIView *VisualContainerView;
 
 }
+@property (strong, nonatomic) IBOutlet UIButton *PlayBtn;
 @property(nonatomic,retain)NSDictionary *stationDatas;
 
 @end

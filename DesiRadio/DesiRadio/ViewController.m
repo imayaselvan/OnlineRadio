@@ -18,11 +18,29 @@
 @end
 
 @implementation ViewController
+- (IBAction)PlayBtnclicked:(id)sender {
+
+    
+    if ([self isPlaying]) {
+
+        [self.visual stop];
+        [self.player pause];
+        [_PlayBtn setImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
+    }else{
+        [self.player play];
+        [self.visual start];
+        [_PlayBtn setImage:[UIImage imageNamed:@"pausebutton"] forState:UIControlStateNormal];
+
+        
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    _PlayBtn.enabled=NO;
+    [_PlayBtn setImage:[UIImage imageNamed:@"playbutton"] forState:UIControlStateNormal];
+
     [self loadData];
     [self setUpvisual];
     
@@ -78,6 +96,8 @@
             
             if ([self  isPlaying]) {
                 [self.visual start];
+                _PlayBtn.enabled=YES;
+                
 
             }
 
